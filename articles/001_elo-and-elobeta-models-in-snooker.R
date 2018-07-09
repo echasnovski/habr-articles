@@ -61,7 +61,7 @@ get_match_result <- function(score1, score2) {
 }
 
 #' @return Рейтинговая функция для модели ЭлоБета, которую можно передать в
-#'   `comperank::add_iterative_ratings()`.
+#'   `add_iterative_ratings()`.
 elobeta_fun_gen <- function(K, ksi = 400) {
   function(rating1, score1, rating2, score2) {
     prob_win <- elobeta_win_prob(
@@ -147,13 +147,13 @@ k_grid <- 1:100
 #'   значения столбца `game`.
 #' @param k_vec Вектор коэффициентов K для вычисления качества модели.
 #' @param rate_fun_gen Функция, которая при передаче коэффициента K возвращает
-#'   рейтинговую функцию для передачи в `comperank::add_iterative_ratings()`.
+#'   рейтинговую функцию для передачи в `add_iterative_ratings()`.
 #' @param get_win_prob Функция для вычисления вероятности победы на основании
 #'   рейтингов игроков (`rating1`, `rating2`) и количества фреймов, необходимого
 #'   для победы в матче (`frames_to_win`). __Замечание__: она должна быть
 #'   векторизована по всем своим аргументам.
 #' @param initial_ratings Начальные рейтинги в формате для
-#'   `comperank::add_iterative_ratings()`.
+#'   `add_iterative_ratings()`.
 #' 
 #' @details Данная функция вычисляет:
 #' - Историю итеративных рейтингов после упорядочивания `matches` по возрастанию
@@ -216,7 +216,7 @@ compute_goodness_wrap <- function(matches_name, test_type, k_vec,
 #'   `compute_goodness()`.
 #' @param rating_type Имена рейтинговых моделей (типы рейтинга).
 #' @param data_type Суффиксы типов данных.
-#' @param k_vec,initial_ratings Величины для `compute_goodnes()`.
+#' @param k_vec,initial_ratings Величины для `compute_goodness()`.
 #' 
 #' @details Данная функция генерирует матрицу эксперимента и вычисляет несколько
 #' значений качества моделей для разных комбинаций типов рейтинга и данных. Для
